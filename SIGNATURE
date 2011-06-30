@@ -1,0 +1,40 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 07b79092e5439b7c0185a2358d715cfb22bd5ea4 .cvsignore
+SHA1 67f4eb78af06ce45f2ce4e217e90e81738bb6b82 Build.PL
+SHA1 b480f61b62a508f1e92d5cf79de67afec00c3f3d Changes
+SHA1 bef4f48172b44e11562f2697ce03c0406739ca58 MANIFEST
+SHA1 9281240e38ec313891d68845d741f9fd9f17110c META.json
+SHA1 f3c97fce73da461d7d764be0484e77b0876c79e1 META.yml
+SHA1 a4df8e97ccd390a42212af5a9f4d0986c85e7a5f Makefile.PL
+SHA1 85afe64eb5483f95e56aeebec4d8f539567bc9b7 README
+SHA1 dc25e73d603738bb481a71d76528a01b2ea9aeb7 lib/Sub/.cvsignore
+SHA1 4166df5468c41d3677ace1e1ab673bd7c0ed6717 lib/Sub/StrictDecl.pm
+SHA1 94b8497da7f3517435b4d931c226c81649f9808e lib/Sub/StrictDecl.xs
+SHA1 30dab076cfab6466e8247a4201b68247a315a742 t/check.t
+SHA1 29c8399c43665e88d8da7778623ab92f235c0c4b t/lexicalsub.t
+SHA1 904d9a4f76525e2303e4b0c168c68230f223c8de t/pod_cvg.t
+SHA1 65c75abdef6f01a5d1588a307f2ddfe2333dc961 t/pod_syn.t
+SHA1 24c164bdb545be9ea62649f935828ff7196b6018 t/scope.t
+SHA1 86beeeb5c754c1f08ed85316e06aa8dd70c3fa9a t/scope_0.pm
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iEYEARECAAYFAk4MxvEACgkQOV9mt2VyAVEpwACfQHy0vt9aGigBXYb8kyArY4ZC
+uV0An2kzQF7w69ssz+SLEy5Tpw8Y73fA
+=uOvp
+-----END PGP SIGNATURE-----
