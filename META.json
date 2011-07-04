@@ -45,7 +45,7 @@
    "provides" : {
       "Sub::StrictDecl" : {
          "file" : "lib/Sub/StrictDecl.pm",
-         "version" : 0
+         "version" : "0.001"
       }
    },
    "release_status" : "stable",
@@ -54,5 +54,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.000"
+   "version" : "0.001"
 }

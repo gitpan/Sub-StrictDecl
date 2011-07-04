@@ -24,7 +24,7 @@ name: Sub-StrictDecl
 provides:
   Sub::StrictDecl:
     file: lib/Sub/StrictDecl.pm
-    version: 0
+    version: 0.001
 requires:
   Lexical::SealRequireHints: 0.004
   XSLoader: 0
@@ -33,4 +33,4 @@ requires:
   warnings: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.000
+version: 0.001

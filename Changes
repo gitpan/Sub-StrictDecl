@@ -1,3 +1,12 @@
+version 0.001; 2011-07-04
+
+  * bugfix: cope with the speculative rv2cv op building performed by
+    Perl 5.11.2 and later
+
+  * ensure compatibility with Devel::CallParser
+
+  * add META.json, MYMETA.json, and MYMETA.yml to .cvsignore
+
 version 0.000; 2011-06-30
 
   * initial released version

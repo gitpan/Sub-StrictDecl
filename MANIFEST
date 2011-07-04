@@ -10,6 +10,7 @@ lib/Sub/.cvsignore
 lib/Sub/StrictDecl.pm
 lib/Sub/StrictDecl.xs
 t/check.t
+t/devel_callparser.t
 t/lexicalsub.t
 t/pod_cvg.t
 t/pod_syn.t

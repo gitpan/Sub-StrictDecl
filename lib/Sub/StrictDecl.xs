@@ -3,6 +3,12 @@
 #include "perl.h"
 #include "XSUB.h"
 
+#define PERL_VERSION_DECIMAL(r,v,s) (r*1000000 + v*1000 + s)
+#define PERL_DECIMAL_VERSION \
+	PERL_VERSION_DECIMAL(PERL_REVISION,PERL_VERSION,PERL_SUBVERSION)
+#define PERL_VERSION_GE(r,v,s) \
+	(PERL_DECIMAL_VERSION >= PERL_VERSION_DECIMAL(r,v,s))
+
 #ifndef newSVpvs_share
 # ifdef newSVpvn_share
 #  define newSVpvs_share(STR) newSVpvn_share(""STR"", sizeof(STR)-1, 0)
@@ -24,6 +30,13 @@
 # define qerror(m) Perl_qerror(aTHX_ m)
 #endif /* !qerror */
 
+#if PERL_VERSION_GE(5,9,5)
+# define PL_parser_exists PL_parser
+# define PL_expect (PL_parser->expect)
+#else /* <5.9.5 */
+# define PL_parser_exists 1
+#endif /* <5.9.5 */
+
 static SV *hint_key_sv;
 static U32 hint_key_hash;
 static OP *(*nxck_rv2cv)(pTHX_ OP *o);
@@ -42,6 +55,7 @@ static OP *myck_rv2cv(pTHX_ OP *op)
 	op = nxck_rv2cv(aTHX_ op);
 	if(op->op_type == OP_RV2CV && (op->op_flags & OPf_KIDS) &&
 			(aop = cUNOPx(op)->op_first) && aop->op_type == OP_GV &&
+			PL_parser_exists && PL_expect == XOPERATOR &&
 			in_strictdecl() &&
 			(gv = cGVOPx_gv(aop)) && !GvCVu(gv)) {
 		SV *name = sv_newmortal();
