@@ -1,3 +1,12 @@
+version 0.002; 2011-07-26
+
+  * bugfix: require bugfixed version of Lexical::SealRequireHints (for
+    working around [perl #73174])
+
+  * fix test case for lexical hints leaking into require
+
+  * add Perl::Critic::StricterSubs to "see also" list
+
 version 0.001; 2011-07-04
 
   * bugfix: cope with the speculative rv2cv op building performed by

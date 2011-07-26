@@ -1,7 +1,7 @@
 use warnings;
 use strict;
 
-use Test::More tests => 14;
+use Test::More tests => 15;
 
 BEGIN { $^H |= 0x20000; }
 
@@ -28,10 +28,17 @@ SKIP: {
 	ok !eval("if(0) { foo(); } 1");
 }
 
-{
+ok eval q{
 	use Sub::StrictDecl;
-	require t::scope_0;
-	ok 1;
-}
+	use t::scope_0;
+	1;
+};
+
+ok !eval q{
+	use Sub::StrictDecl;
+	BEGIN { my $x = "foo\x{666}"; $x =~ /foo\p{Alnum}/; }
+	if(0) { foo(); }
+	1;
+};
 
 1;

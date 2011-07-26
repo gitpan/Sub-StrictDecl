@@ -39,9 +39,9 @@ package Sub::StrictDecl;
 use warnings;
 use strict;
 
-use Lexical::SealRequireHints 0.004;
+use Lexical::SealRequireHints 0.005;
 
-our $VERSION = "0.001";
+our $VERSION = "0.002";
 
 require XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
@@ -64,6 +64,7 @@ that is currently compiling.
 
 =head1 SEE ALSO
 
+L<Perl::Critic::StricterSubs>,
 L<strict>
 
 =head1 AUTHOR
