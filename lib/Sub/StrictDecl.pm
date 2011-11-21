@@ -36,12 +36,11 @@ a subroutine in place at runtime, for example.
 package Sub::StrictDecl;
 
 { use 5.006; }
+use Lexical::SealRequireHints 0.006;
 use warnings;
 use strict;
 
-use Lexical::SealRequireHints 0.005;
-
-our $VERSION = "0.002";
+our $VERSION = "0.003";
 
 require XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
